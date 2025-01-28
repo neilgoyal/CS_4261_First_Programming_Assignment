@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
             if (name.isNotEmpty()) {
                 textViewResult.text = "Hello, $name!"
             } else {
-                textViewResult.text = "Please enter your name."
+                textViewResult.text = "Please enter your name!"
             }
         }
     }
