@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
                 userId?.let {
                     dbRef.child(it).setValue(name)
                     textViewResult.text = "Hello, $name! Your data has been saved."
+                    Toast.makeText(this, "Name saved to Firebase!", Toast.LENGTH_SHORT).show() // Added toast
                 }
             } else {
                 textViewResult.text = "Please enter your name."
