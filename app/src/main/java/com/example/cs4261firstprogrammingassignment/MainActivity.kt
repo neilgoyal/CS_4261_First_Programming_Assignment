@@ -10,24 +10,31 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.cs4261firstprogrammingassignment.ui.theme.CS4261FirstProgrammingAssignmentTheme
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : ComponentActivity() {
+    private val database = FirebaseDatabase.getInstance()
+    private val dbRef = database.getReference("users")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Find views by ID
         val editTextName = findViewById<EditText>(R.id.editTextName)
         val buttonSubmit = findViewById<Button>(R.id.buttonSubmit)
         val textViewResult = findViewById<TextView>(R.id.textViewResult)
 
-        // Set button click listener
         buttonSubmit.setOnClickListener {
             val name = editTextName.text.toString()
             if (name.isNotEmpty()) {
-                textViewResult.text = "Hello, $name!"
+                // Push data to Firebase
+                val userId = dbRef.push().key
+                userId?.let {
+                    dbRef.child(it).setValue(name)
+                    textViewResult.text = "Hello, $name! Your data has been saved."
+                }
             } else {
-                textViewResult.text = "Please enter your name!"
+                textViewResult.text = "Please enter your name."
             }
         }
     }

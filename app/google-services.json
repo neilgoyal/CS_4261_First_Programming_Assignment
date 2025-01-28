@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1022687204071",
+    "project_id": "cs4261firstprogramming",
+    "storage_bucket": "cs4261firstprogramming.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022687204071:android:8ac164c5b508a17fbcc842",
+        "android_client_info": {
+          "package_name": "com.example.cs4261firstprogrammingassignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMcJVQV0f_5YWWJQygXxHgTCIdXr6rwRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

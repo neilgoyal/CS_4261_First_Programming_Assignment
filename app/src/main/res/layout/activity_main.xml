@@ -9,7 +9,10 @@
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your name" />
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Enter your name"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/buttonSubmit"
